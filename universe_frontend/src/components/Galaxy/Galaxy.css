@@ -1,0 +1,49 @@
+/* body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    height: 100%;
+    background: black;
+} */
+
+.background {
+    background-color: #08030e;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    overflow: hidden;
+    perspective: 1000px;
+    z-index: 1; /* Fondo detrás de otros elementos */
+}
+
+.star {
+    position: absolute;
+    border-radius: 50%;
+    background: white;
+    opacity: 0.8;
+    animation: blink 1s infinite alternate; /* Animación de parpadeo */
+}
+
+@keyframes blink {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+@keyframes move {
+    0% {
+        transform: translateZ(0);
+    }
+    100% {
+        transform: translateZ(-1000px);
+    }
+}
+
+.text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2rem;
+    z-index: 2; /* Texto encima del fondo */
+}
